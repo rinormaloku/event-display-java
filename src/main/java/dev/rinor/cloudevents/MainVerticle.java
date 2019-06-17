@@ -10,7 +10,6 @@ import io.vertx.reactivex.ext.web.RoutingContext;
 
 public class MainVerticle extends AbstractVerticle {
 
-
   private static final Logger LOGGER = LoggerFactory.getLogger(MainVerticle.class);
 
   @Override
@@ -25,8 +24,7 @@ public class MainVerticle extends AbstractVerticle {
         VertxCloudEvents.create().rxReadFromRequest(req.request())
           .subscribe((receivedEvent, throwable) -> {
             if (receivedEvent != null) {
-              LOGGER.fatal("The event type: " + receivedEvent.getType());
-              LOGGER.fatal("->" + receivedEvent.toString());
+              System.out.printf("☁️  cloudevents.Event:\n%s\n", receivedEvent.toString());
             }
           });
         req.response().end();
