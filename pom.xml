@@ -12,6 +12,7 @@
   <properties>
     <vertx.version>3.7.0</vertx.version>
     <main.verticle>dev.rinor.cloudevents.MainVerticle</main.verticle>
+    <assertj-core.version>3.11.0</assertj-core.version>
   </properties>
 
   <dependencyManagement>
@@ -39,6 +40,12 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj-core.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
