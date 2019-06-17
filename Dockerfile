@@ -4,7 +4,7 @@ COPY pom.xml /app/pom.xml
 RUN mvn -f /app/pom.xml dependency:go-offline
 
 COPY src /app/src
-#RUN mvn test -f /app/pom.xml
+RUN mvn test -f /app/pom.xml
 RUN mvn -f /app/pom.xml package -Dmaven.test.skip=true
 
 FROM openjdk:8-jre-alpine
